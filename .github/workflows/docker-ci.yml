@@ -18,4 +18,15 @@ jobs:
         distribution: 'adopt' # See 'Supported distributions' for available options
         java-version: '8'
     - name: application build
-      run: ./gradlew clean build -x test
+      run: ./gradlew clean build -x test-
+    - name: Login to DockerHub
+      uses: docker/login-action@v1 
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build and push
+      id: docker_build
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        tags: user/app:latest
