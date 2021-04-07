@@ -12,8 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: recursive
     - uses: actions/setup-java@v2
       name: 자바 설치
       with:
@@ -22,7 +20,7 @@ jobs:
     - name: application build
       run: ./gradlew clean build -x test
     - name: Login to DockerHub
-      uses: docker/login-action@v1 
+      uses: docker/login-action@v1
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -32,4 +30,4 @@ jobs:
     - name: docker build
       run: docker build --build-arg JAR_FILE=build/libs/\*.jar -t vsh123/infra-subway .
     - name: docker image pushㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄲㄱ
-      run: docker push vsh123/infra-subway 
+      run: docker push vsh123/infra-subway
