@@ -13,7 +13,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        repository: vsh123/infra-config
         token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
         submodules: recursive
     - uses: actions/setup-java@v2
