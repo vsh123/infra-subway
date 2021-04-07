@@ -12,6 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        repository: my-org/my-private-tools
+        token: ${{ secrets.PAT }} # `GitHub_PAT` is a secret that contains your PAT
+        submodules: recursive
     - uses: actions/setup-java@v2
       name: 자바 설치
       with:
