@@ -33,8 +33,8 @@ public class DataLoaderConfig implements CommandLineRunner {
         Line 삼호선 = new Line("3호선", "orange darken-1", 교대역, 양재역, 10);
         삼호선.addLineSection(교대역, 남부터미널역, 5);
 
-        lineRepository.saveAll(Lists.newArrayList(신분당선, 이호선, 삼호선));
+//        lineRepository.saveAll(Lists.newArrayList(신분당선, 이호선, 삼호선));
 
-        memberRepository.save(new Member("probitanima11@gmail.com", "11", 10));
+//        memberRepository.save(new Member("probitanima11@gmail.com", "11", 10));
     }
 }
