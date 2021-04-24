@@ -4,7 +4,7 @@
 
     <property name="LOG_PATH" value="/var/log/subway/"/>
 
-    <springProfile name="local">
+    <springProfile name="local,test">
         <property name="LOG_PATH" value="log/subway"/>
     </springProfile>
     <!--spring boot의 기본 logback base.xml은 그대로 가져간다.-->
